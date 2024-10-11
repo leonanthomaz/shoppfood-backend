@@ -1,0 +1,11 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: ON_PARAM
+spring:
+  application:
+    name: erp
+  profiles:
+    active: production
+jwt:
+  secret: microshoppe

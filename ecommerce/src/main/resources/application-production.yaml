@@ -1,0 +1,14 @@
+#application-production.yaml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/shoppfood
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: leonan2knet
+  jpa:
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: always
+

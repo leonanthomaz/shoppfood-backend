@@ -1,0 +1,77 @@
+server:
+  port: 8090
+  error:
+    include-stacktrace: ON_PARAM
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: ecommerce
+  profiles:
+    active: production
+  mvc:
+    static-path-pattern: /uploads/**
+    resources:
+      static-locations:
+        - file:uploads/
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 148120872139-6hqntpes8l1s450gqgemc24hkfsl17lj.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - profile
+              - email
+            authorization-grant-type: authorization_code
+            client-name: Google
+          facebook:
+            client-id: YOUR_FACEBOOK_CLIENT_ID
+            client-secret: YOUR_FACEBOOK_CLIENT_SECRET
+            scope:
+              - public_profile
+              - email
+            authorization-grant-type: authorization_code
+            client-name: Facebook
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: leonan.thomaz@gmail.com
+    password: xnepflqdhchkmyrq
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            require: true
+          ssl:
+            trust: smtp.gmail.com
+  redis:
+    host: localhost
+    port: 6379
+    cache:
+      type: simple
+twilio:
+  account:
+    sid: AC513f588c8bdac13d40827cb2e473439e
+  auth:
+    token: a8e65ee249d740cb4215bde1a37d7155
+  phone:
+    number: +15623928296
+mercado_pago:
+#  access_token: TEST-599616859208528-082522-a00a1d423652bacf9bdcc98fa80431f1-134859909
+  access_token: APP_USR-599616859208528-082522-d973fad4c93ea944d3adf5b0c3a64e19-134859909
+jwt:
+  secret: microshoppe
+
+admin:
+  name: "Leonan Thomaz de Oliveira"
+  email: "leonan.thomaz@gmail.com"
+  password: "leonan2knet"
+  telephone: "21998090928"
